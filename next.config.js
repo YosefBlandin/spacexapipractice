@@ -8,7 +8,8 @@ const nextConfig = {
       'imgur.com',
       'farm1.staticflickr.com',
       'farm5.staticflickr.com',
-      'live.staticflickr.com'
+      'live.staticflickr.com',
+      'photos.marinetraffic.com'
     ]
   }
 }
