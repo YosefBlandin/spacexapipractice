@@ -7,6 +7,7 @@ import { Card } from '../components/Card'
 import styles from '../styles/Home.module.css'
 
 interface iElement {
+  id: string
   name: string
   flickr_images?: string[]
   image?: string
@@ -25,6 +26,7 @@ const Home: NextPage<{
   rockets: iElement[]
   ships: iElement[]
 }> = ({ dragonShips, rockets, ships }) => {
+  console.log(dragonShips)
   return (
     <div className={styles.container}>
       <Head>
@@ -36,38 +38,32 @@ const Home: NextPage<{
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{' '}
-          <a href='https://nextjs.org'>Yosef Blandin's SpaceX API Practice</a>
+          <a href='https://nextjs.org'>Yosef Blandin SpaceX API Practice</a>
         </h1>
 
         <p className={styles.description}>
           You can see different ships retrieved from the SpaceX Open Source API{' '}
         </p>
 
-        <section>
-          <h2 className={styles.description}>Dragon Capsules</h2>
-          <div className={styles.grid}>
-            {dragonShips?.map(element => (
-              <Card element={element} key={element.name} />
-            ))}
-          </div>
+        <h2 className={styles.description}>Dragon Capsules</h2>
+        <section className={styles.grid}>
+          {dragonShips?.map(element => (
+            <Card element={element} key={element.name} />
+          ))}
         </section>
 
-        <section>
-          <h2 className={styles.description}>Rockets</h2>
-          <div className={styles.grid}>
-            {rockets?.map(element => (
-              <Card element={element} key={element.name} />
-            ))}
-          </div>
+        <h2 className={styles.description}>Rockets</h2>
+        <section className={styles.grid}>
+          {rockets?.map(element => (
+            <Card element={element} key={element.name} />
+          ))}
         </section>
 
-        <section>
-          <h2 className={styles.description}>Ships</h2>
-          <div className={styles.grid}>
-            {ships?.map(element => (
-              <Card element={element} key={element.name} />
-            ))}
-          </div>
+        <h2 className={styles.description}>Ships</h2>
+        <section className={styles.grid}>
+          {ships?.map(element => (
+            <Card element={element} key={element.name} />
+          ))}
         </section>
       </main>
 
